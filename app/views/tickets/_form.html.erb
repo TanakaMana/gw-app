@@ -1,0 +1,70 @@
+<%= form_for(@ticket) do |f| %>
+      <div class="form-group">
+        <%= f.label :category, "カテゴリ" %><br>
+        <%= f.select :category, ["要件定義", "設計", "開発", "単体テスト", "結合テスト", "ユーザーテスト"], :prompt => "選択してください"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :title, "題名" %><br>
+        <%= f.text_area :title, placeholder: '題名を入力してください。' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :comment_summary, "説明大項目" %><br>
+        <%= f.text_area :comment_summary, placeholder: 'タスク進捗状況の概要を記載してください。' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :comment_descriptive, "説明小項目" %><br>
+        <%= f.text_area :comment_descriptive, placeholder: 'タスク進捗状況の詳細を記載してください。' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :status, "ステータス" %><br>
+        <%= f.select :status, ["未着手", "遅延", "予定通り", "前倒し"], :prompt => "選択してください"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :PIC, "担当者" %><br>
+        <%= f.text_area :PIC, placeholder: '担当者を入力してください。' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :related_ticket1, "関連チケット1" %><br>
+        <%= f.text_area :related_ticket1, placeholder: '前後関係のあるタスクを入力してください。' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :related_ticket2, "関連チケット2" %><br>
+        <%= f.text_area :related_ticket2, placeholder: '前後関係のあるタスクを入力してください。' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :related_ticket3, "関連チケット3" %><br>
+        <%= f.text_area :related_ticket3, placeholder: '前後関係のあるタスクを入力してください。' %>
+      </div>
+
+      <div class="form-group" style="position: relative" required>
+        <%= f.label :start_date, "開始日" %><br>
+        <%= f.date_field :start_date, placeholder: '開始日を入力してください。' %>
+      </div>
+
+      <div class="form-group"　style="position: relative" requiredz>
+        <%= f.label :due_date, "期日" %><br>
+        <%= f.date_field :due_date, placeholder: '期日を入力してください。' %>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.label :progress_rate, "進捗率" %><br>
+        <%= f.select :progress_rate, ["0%", "30%", "50%", "80%","100%"], :prompt => "進捗率を記入してください。"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :watcher, "チケットのウォッチャー1" %><br>
+        <%= f.text_area :watcher, placeholder: '進捗を報告したい人を記載してください。' %>
+      </div>
+
+      <%= f.submit :class=>"btn btn-primary" %>
+      <%= link_to '戻る', :back, class:"btn btn-dark"  %>
+    <% end %>

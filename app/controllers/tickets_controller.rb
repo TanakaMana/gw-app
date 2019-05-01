@@ -21,6 +21,12 @@ class TicketsController < ApplicationController
   end
 
   def edit
+    @ticket = Ticket.find(params[:id])
+  end
+
+  def update
+    @ticket = Ticket.find(params[:id])
+    @ticket.update(params.require)
   end
 
   private
