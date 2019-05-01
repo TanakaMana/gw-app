@@ -37,17 +37,19 @@
     </div> 
          
     <div class="form-group">
-      <label>email</label>
-        <input name="" class="form-control" placeholder="Email" type="email">
+      <%= f.label :email, 'email' %>
+      <%= f.text_field :email, class: 'form-control', :placeholder => "shin@dartsbot.com" %>
     </div>
          <!-- form-group// -->
     <div class="form-group">
-      <label>パスワード</label>
-        <input class="form-control" placeholder="******" type="password">
-    </div> <!-- form-group// --> 
+      <%= f.label :encrypted_password, 'パスワード' %>
+      <%= f.text_field :encrypted_password, class: 'form-control', :placeholder => "******" %>
+    </div>
+
     <div class="form-group"> 
     <div class="checkbox">
-      <label> <input type="checkbox">パスワードの保存</label>
+      <%= f.label :administraton_flag, 'パスワードを記録する' %>
+      <%= f.check_box :administraton_flag %>
     </div> <!-- checkbox .// -->
     </div> <!-- form-group// -->  
     <div class="form-group">
